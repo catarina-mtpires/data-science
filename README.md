@@ -11,5 +11,6 @@ This is an open source datased from UCI Machine learning repository that can be 
 
 ### IMDb 
 - [SQLite Database](https://github.com/catarina-mtpires/data-science/blob/main/IMDb/Create%20SQLite3%20Database.ipynb) - creation of a SQLite Databased with data from IMDb.
+- [Data Analysis](https://github.com/catarina-mtpires/data-science/blob/main/IMDb/Data%20Analysis.ipynb) - SQL analysis of IMDb database. 
 
 The IMDb data used in this project can be found [here](https://www.imdb.com/interfaces/).
