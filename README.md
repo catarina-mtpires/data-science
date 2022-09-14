@@ -15,7 +15,9 @@ This is an open source datased from UCI Machine learning repository that can be 
 
 The IMDb data used in this project can be found [here](https://www.imdb.com/interfaces/).
 
-### My Fitbit Data (<i> Currently in progress </i>)
+### My Fitbit Data (<i>Currently in progress</i>)
 
-Fitbit allows its users to download and access their personal data, which includes activity, sleep, heart rate, among others. This dataset contains my personal Fitbit data, collected with Fitbit Sense smartwatch since December 2021.
+- [Data Overview](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/data%20overview.md) - detailed description of data extracted from fitbit. 
+
+Fitbit allows its users to download and access their personal data, which includes activity, sleep, heart rate, among others. This dataset contains my personal Fitbit data, collected with Fitbit Sense smartwatch from December 2021 to September 2022.
 
