@@ -15,11 +15,11 @@ Sense is a health smartwatch that includes the following sensors:
 - Microphone.
 
 With these sensors, Sense can provide information about health and fitness of the user. We will use the following data for this project:
-1 - Activity Tracking Data - includes steps, distance, floors, calories, exercise, daily readiness score, active zone minutes, and VO2 max;
-2 - Heart Data - includes heart rate tracking (BPM measurements), resting heart rate, and ECG signals;
-3 - Sleep Data - includes sleep stages, sleep score, snore and noise detection, breathing rate, temperature, and heart rate variability;
-4 - Stress Data - includes stress management score, and electrodermal activity;
-5 - Oxygen Variation Data - includes estimated oxygen variation.
+1. Activity Tracking Data - includes steps, distance, floors, calories, exercise, daily readiness score, active zone minutes, and VO2 max;
+2. Heart Data - includes heart rate tracking (BPM measurements), resting heart rate, and ECG signals;
+3. Sleep Data - includes sleep stages, sleep score, snore and noise detection, breathing rate, temperature, and heart rate variability;
+4. Stress Data - includes stress management score, and electrodermal activity;
+5. Oxygen Variation Data - includes estimated oxygen variation.
 
 Next, we have a detailed description of each parameter.
 
@@ -57,9 +57,9 @@ Sense can track exercise of 20 different modes (run, walk, hike, bike, swim, etc
 
 Sense calculates a daily readiness score that indicates how prepared the user is for physical activity that day. It contains three readiness ranges:
 
-1 - Low Readiness (from 1 to 29) - the user should prioritize recovery and avoid overexertion;
-2 - Good Readiness (from 30 to 64) - the user is ready for a normal amount of exercise, but should not push beyond personal limits;
-3 - Excellent readiness (from 65 to 100) - the user is ready to take a challenging workout.
+1. Low Readiness (from 1 to 29) - the user should prioritize recovery and avoid overexertion;
+2. Good Readiness (from 30 to 64) - the user is ready for a normal amount of exercise, but should not push beyond personal limits;
+3. Excellent readiness (from 65 to 100) - the user is ready to take a challenging workout.
 
 Daily readiness Score data extracted from Fitbit is in the <i>.csv</i> format and contains the date of the score, the final score level (1 per day), and the normalized scores of sleep, fitness fatigue, and heart rate variabilities components, which are used to calculate the final score.
 
@@ -72,12 +72,12 @@ Active zone minutes data extracted from Fitbit is in the <i>.json</i> format and
 ### VO2 Max
 
 Sense can estimate the user's VO2 max, which is the maximum amount of oxygen the body can use during exercise. VO2 max is based on the user's resting heart rate and profile (such as age, gender, and weight) and it measures cardio fitness level. The higher the value, the better the cardio fitness level. Cardio fitness level can be improved with exercise and healthy weight loss and it has 6 different levels, ranging from poor to excellent:
-1 - Poor - VO2 max < 31.2;
-2 - Fair - 31.2 < VO2 max ≤ 35.9;
-3 - Average - 35.9 < VO2 max ≤ 40.8;
-4 - Good - 40.8 < VO2 max ≤ 45.6;
-5 - Very Good - 45.6 < VO2 max ≤ 50.2;
-6 - Excellent - VO2 max > 50.2.
+1. Poor - VO2 max < 31.2;
+2. Fair - 31.2 < VO2 max ≤ 35.9;
+3. Average - 35.9 < VO2 max ≤ 40.8;
+4. Good - 40.8 < VO2 max ≤ 45.6;
+5. Very Good - 45.6 < VO2 max ≤ 50.2;
+6. Excellent - VO2 max > 50.2.
 
 VO2 max data extracted from Fitbit is in the <i>.json</i> format and contains dates and the correspondent VO2 max value (1 per day).
 
@@ -115,10 +115,10 @@ Sleep stages data extracted from Fitbit is in the <i>.json</i> format and contai
 ### Sleep Score
 
 Based on the sleep stages and heart rate, Sense calculates a sleep score for each night that measures sleep quality. It helps the user understand the sleep each night and find trends in it and ranges from 0 to 100:
-1 - Poor - Less than 60;
-2 - Fair - 60 to 79;
-3 - Good - 80 to 89;
-4 - Excellent - 90 yo 100.
+1. Poor - Less than 60;
+2. Fair - 60 to 79;
+3. Good - 80 to 89;
+4. Excellent - 90 yo 100.
 
 The overall sleep score is a sum of the user's individual scores in sleep duration, sleep quality, and restoration:
 - Duration considers time asleep and awake;
