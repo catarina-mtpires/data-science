@@ -27,49 +27,49 @@ Next, we have a detailed description of each parameter.
 
 ### Steps
 
-Sense counts the number of steps the user takes each day using a 3-axis accelerometer. This sensor allows Sense to determine the frequency, duration, intensity, and patterns of the user's movement. 
+Sense counts the number of steps the user takes each day using a 3-axis accelerometer. This sensor allows Sense to determine frequency, duration, intensity, and patterns of the user's movement. 
 
 Steps data extracted from Fitbit are in the <i>.json</i> format and contain:
-- timestamps with up to 1 minute interval;
-- number of steps taken between timestamps.
+- Timestamps with up to 1 minute interval;
+- Number of steps taken between timestamps.
 
 ### Distance
 
 Sense calculates distance based on the number of steps or the GPS data. Usually, sense calculates the distance travelled each day by multiplying the number of steps by the stride lenght. However, when the user tracks an activity with GPS, Sense uses GPS data to calculate distance.
 
 Distance data extracted from Fitbit are in the <i>.json</i> format and contain:
-- timestamps with up to 1 minute interval;
-- distance (in centimeters, cm) walked between timestamps. 
+- Timestamps with up to 1 minute interval;
+- Distance (in centimeters, cm) walked between timestamps. 
 
 ### Floors
 
 Sense has an altimeter sensor that tracks altitude and converts it to floors climbed along the day, considering one floor is equivalent to 3 meters. 
 
 Floors data extracted from Fitbit are in the <i>.json</i> format and contain:
-- timestamps with up to 1 minute interval;
-- number of floors climed between timestamps.
+- Timestamps with up to 1 minute interval;
+- Number of floors climed between timestamps.
 
 ### Calories
 
 Sense estimates the number of calories burned daily by combining the user's basal metabolic rate (rate at which calories are burned at rest to maintain vital body functions) and activity data. The user's BMR (basal metabolic rate) is based on physical data entered by the user, such as height, weight, sex, and age.
 
 Calories data extracted from Fitbit are in the <i>.json</i> format and contain:
-- timestamps with up to 1 minute interval;
-- number of calories (in kilocalories, kcal) burned between timestamps.
+- Timestamps with up to 1 minute interval;
+- Number of calories (in kilocalories, kcal) burned between timestamps.
 
 ### Exercise
 
 Sense can track exercise of 20 different modes (run, walk, hike, bike, swim, etc.). For each activity the user records, Sense tracks:
-- number of minutes in each activity level (sedentary, light activity, moderate activity, and intense activity);
-- average heart rate;
-- number of calories burned;
-- duration of the workout;
-- number of steps taken;
-- heart rate zones (out of range, fat burn, cardio, and peak);
-- active zone minutes;
-- elevation gain;
-- start time;
-- end time.
+- Number of minutes in each activity level (sedentary, light activity, moderate activity, and intense activity);
+- Average heart rate;
+- Number of calories burned;
+- Duration of the workout;
+- Number of steps taken;
+- Heart rate zones (out of range, fat burn, cardio, and peak);
+- Active zone minutes;
+- Elevation gain;
+- Start time;
+- End time.
 
 Exercise data extracted from Fitbit are in the <i>.json</i> format.
 
@@ -87,17 +87,17 @@ Sense uses 3 components to estimate the final score - activity, recent sleep, an
 - Heart rate variability is the variation in the time between heartbeats and it can reveal if the user is ready to take on a challenging workout or need to focus on recovery.
 
 Daily readiness Score data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- date of the score;
-- final score level (1 value per day);
-- normalized scores of sleep, fitness fatigue, and heart rate variabilities components.
+- Date of the score;
+- Final score level (1 value per day);
+- Normalized scores of sleep, fitness fatigue, and heart rate variabilities components.
 
 ### Active Zone Minutes
 
 Sense uses active zone minutes to track the user's time in a heart-pumping activity, having a goal of 150 minutes of moderate activity or 75 minutes of intense activity per week. Sense adds Active Zone Minutes for time spent in the fat burn, cardio, or peak heart rate zones, which are personalized based on the user's fitness level and age.
 
 Active zone minutes data extracted from Fitbit are in the <i>.json</i> format and contain:
-- date;
-- total number of minutes spent in each zone (sedentary, light activity, moderate activity, and intense activity).
+- Date;
+- Total number of minutes spent in each zone (sedentary, light activity, moderate activity, and intense activity).
 
 ### VO2 Max
 
@@ -110,7 +110,7 @@ Sense can estimate the user's VO2 max, which is the maximum volume of oxygen the
 6. Excellent - VO2 max > 50.2.
 
 VO2 max data extracted from Fitbit are in the <i>.json</i> format and contain:
-- date;
+- Date;
 - VO2 max (1 value per day).
 
 ## 2. Heart Data
@@ -120,16 +120,16 @@ VO2 max data extracted from Fitbit are in the <i>.json</i> format and contain:
 Sense has an optical heart rate sensor that tracks the user's heart rate (how many times the heart beats in a minute) 24/7.
 
 Heart rate data extracted from Fitbit are in the <i>.json</i> format and contain:
-- timestamps with up to 5 seconds interval; 
-- heart rate (in beats per minute, bmp).
+- Timestamps with up to 5 seconds interval; 
+- Heart rate (in beats per minute, bmp).
 
 ### Resting Heart Rate
 
 Resting heart Rate is the number of times the heart beats per minute at rest. Typically, resting heart rate ranges from 60 to 100 bpm and it can be an important indicator of fitness level and overall cardiovascular health.
 
 Resting heart rate data extracted from Fitbit are in the <i>.json</i> format and contain:
-- date;
-- resting heart rate (1 value per day).
+- Date;
+- Resting heart rate (1 value per day).
 
 ### ECG Signals
 
@@ -137,7 +137,7 @@ Sense can record an ECG signal and analyse it to look for signs of atrial fibril
 
 ECG data extracted from Fitbit are in the <i>.csv</i> format and contain:
 - ECG readings with a total duration of 30 seconds;
-- average heart rate during the readings.
+- Average heart rate during the readings.
 
 ## 3. Sleep Data
 
@@ -149,12 +149,12 @@ Sense tracks the user's sleep stages (awake, light sleep, deep sleep, and REM sl
 - REM sleep (rapid eye movement sleep) occurs after deep sleep and the brain becomes more active. Dreams mainly occur in this phase where the heart rate increases and breathing becomes more irregular. REM sleep plays an important role in mood regulation, learning, and memory, as the brain processes and consolidates information from the previous day so that it can be stored in long-term memory.
 
 Sleep stages data extracted from Fitbit are in the <i>.json</i> format and contain:
-- date;
-- start time;
-- end time;
-- number of minutes: to fall asleep, awake, after awake, and time in bed;
-- information about each sleep stage: number of times in each stage, number of minutes, and thirty day average minutes;
-- timestamps and correspondent sleep stages and duration (in seconds, s).
+- Date;
+- Start time;
+- End time;
+- Number of minutes: taken to fall asleep, awake, after waking up, and total time in bed;
+- Information about each sleep stage: number of times in each stage, number of minutes, and thirty day average minutes;
+- Timestamps and correspondent sleep stages and duration (in seconds, s).
 
 ### Sleep Score
 
@@ -170,28 +170,28 @@ The overall sleep score is a sum of the user's individual scores in sleep durati
 - Restoration considers sleeping heart rate and restlessness.
 
 Sleep score data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- date of the score;
-- overall score;
-- duration, sleep quality, and restoration scores;
-- deep sleep duration (in minutes, min);
-- resting heart rate.
+- Date of the score;
+- Overall score;
+- Duration, sleep quality, and restoration scores;
+- Deep sleep duration (in minutes, min);
+- Resting heart rate.
 
 ### Snore and Noise Detection
 
 Sense detect snore and noise during the user's sleep, through the built-in microphone. It can measure sound intensity (to determine the baseline noise level), and snoring events (by looking for snore-specific noises).
 
 Snore and noise detection data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- timestamps with 30 seconds interval;
-- mean, maximum, and minimum noise level measured between timestamps (in decibels A, dBA);
-- number of sound and snoring events between timestamps.
+- Timestamps with 30 seconds interval;
+- Mean, maximum, and minimum noise level measured between timestamps (in decibels A, dBA);
+- Number of sound and snoring events between timestamps.
 
 ### Breathing Rate
 
 Sense measures the user's breathing rate while sleeping, that is, the number of breaths taken per minute. Breathing rate is typically between 12 and 20 breaths per minute.
 
 Breathing rate data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- date;
-- breathing rates for the entire sleep, deep sleep, light sleep, and REM sleep (1 value per day).
+- Date;
+- Breathing rates for the entire sleep, deep sleep, light sleep, and REM sleep (1 value per day).
 
 
 ### Temperature
@@ -199,9 +199,9 @@ Breathing rate data extracted from Fitbit are in the <i>.csv</i> format and cont
 Sense tracks skin temperature each night to show how it varies from the user's personal baseline, creating trends over time. Sense uses 30 nights of temperature data to estimate the user's temperature baseline and creates the user's personal range between plus and minus 2 standard deviations from the baseline.
 
 Temperature data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- timestamps with 1 minute interval;
-- deviation from the baseline (in degree Celsius, °C);
-- baseline value (°C);
+- Timestamps with 1 minute interval;
+- Deviation from the baseline (in degree Celsius, °C);
+- Baseline value (°C);
 - Standard deviation of the baseline.
 
 ### Heart Rate Variability
@@ -210,10 +210,10 @@ Heart rate variability (HRV) is the variation in time between heartbeats and it 
 
 HRV data extracted from Fitbit are in the <i>.csv</i> format and contain two types of data:
 1. Detailed HRV - includes:
-	- timestamps with 5 minutes interval;
+	- Timestamps with 5 minutes interval;
 	- HRV;
-	- low frequency (measures long term variations in heart rate and reflects activity from both the sympathetic and parasympathetic branches);
-	- high frequency (measures short term variations in heart rate and captures parasympathetic activity).
+	- Low frequency (measures long term variations in heart rate and reflects activity from both the sympathetic and parasympathetic branches);
+	- High frequency (measures short term variations in heart rate and captures parasympathetic activity).
 2. Histogram - includes histograms that show the spread in the beat-to-beat intervals during sleep. Histograms are composed by 29 bins with an interval of 0.05s and starting at 0.3s. 
 
 ## 4. Stress Data
@@ -226,17 +226,17 @@ Sense calculates a daily stress management score to help the user understand how
 - Sleep patterns considers total sleep over the previous week, restlessness and other indicators of disrupted sleep from the night before, and time spent in REM and deep sleep from the night before.
 
 Stress management score data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- date of the score;
-- stress score (1 score per day);
-- points from responsiveness, sleep, and exertion components.
+- Date of the score;
+- Stress score (1 score per day);
+- Points from responsiveness, sleep, and exertion components.
 
 ### Electrodermal Activity
 
 Sense detects electrodermal activity (EDA) through the on-wrist EDA Scan, which may indicate the user's response to stress. EDA responses are tiny changes in the sweat level of the skin, which may happen due to stress or other factors. The calmer a person is, the fewer EDA responses the person will have. 
 
 Estimated electrodermal activity data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- timestamps with 1 second interval;
-- average skin conductance level (SCL).  
+- Timestamps with 1 second interval;
+- Average skin conductance level (SCL).  
 
 
 ## 5. Oxygen Variation Data
@@ -246,5 +246,5 @@ Estimated electrodermal activity data extracted from Fitbit are in the <i>.csv</
 Estimated oxygen variation approximates the changes in the user's blood oxygen saturation, which measures the percent of blood that is saturated with oxygen. Typically, it is at 95-100%, meaning the blood is carrying as much oxygen as it can. Sense has red and infrared sensors that can estimate the variability of blood oxygen saturation level - richly oxygenated blood is red and reflects more red light than infrared light; poorly oxygenated blood is bluish red and reflects more infrared light than red light.
 
 Estimated oxygen variation data extracted from Fitbit are in the <i>.csv</i> format and contain:
-- timestamps with up to 1 minute interval;
-- infrared to red signal ratio. 
+- Timestamps with up to 1 minute interval;
+- Infrared to red signal ratio. 
