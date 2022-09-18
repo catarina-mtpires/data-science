@@ -66,10 +66,7 @@ Sense can track exercise of 20 different modes (run, walk, hike, bike, swim, etc
 - Duration of the workout;
 - Number of steps taken;
 - Heart rate zones (out of range, fat burn, cardio, and peak);
-- Active zone minutes;
-- Elevation gain;
-- Start time;
-- End time.
+- Start time.
 
 Exercise data extracted from Fitbit are in the <i>.json</i> format.
 
@@ -89,7 +86,7 @@ Sense uses 3 components to estimate the final score - activity, recent sleep, an
 Daily readiness Score data extracted from Fitbit are in the <i>.csv</i> format and contain:
 - Date of the score;
 - Final score level (1 value per day);
-- Normalized scores of sleep, fitness fatigue, and heart rate variabilities components.
+- Normalized scores of sleep, fitness fatigue, and heart rate variability components.
 
 ### Active Zone Minutes
 
@@ -152,7 +149,7 @@ Sleep stages data extracted from Fitbit are in the <i>.json</i> format and conta
 - Date;
 - Start time;
 - End time;
-- Number of minutes: taken to fall asleep, awake, after waking up, and total time in bed;
+- Number of minutes awake and total time in bed;
 - Information about each sleep stage: number of times in each stage, number of minutes, and thirty day average minutes;
 - Timestamps and correspondent sleep stages and duration (in seconds, s).
 
@@ -172,9 +169,7 @@ The overall sleep score is a sum of the user's individual scores in sleep durati
 Sleep score data extracted from Fitbit are in the <i>.csv</i> format and contain:
 - Date of the score;
 - Overall score;
-- Duration, sleep quality, and restoration scores;
-- Deep sleep duration (in minutes, min);
-- Resting heart rate.
+- Duration, sleep quality, and restoration scores.
 
 ### Snore and Noise Detection
 
@@ -206,7 +201,7 @@ Temperature data extracted from Fitbit are in the <i>.csv</i> format and contain
 
 ### Heart Rate Variability
 
-Heart rate variability (HRV) is the variation in time between heartbeats and it is measured by the variation in the beat-to-beat interval. Sense tracks HRV during night to see if the user's body is showing potential signs of stress, illness, or fatigue. Higher HRV is related to better cardiovascular fitness. On the other hand, a significant drop in HRV may indicate illness, stress, depression, or anxiety.
+Heart rate variability (HRV) is the variation in time between heartbeats and it is measured by the variation in the beat-to-beat interval. Sense tracks HRV during sleep - higher HRV is related to better cardiovascular fitness and a significant drop in HRV may indicate illness, stress, depression, or anxiety.
 
 HRV data extracted from Fitbit are in the <i>.csv</i> format and contain two types of data:
 1. Detailed HRV - includes:
