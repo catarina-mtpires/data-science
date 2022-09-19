@@ -267,7 +267,7 @@ There are 3 different types of data, based on the frequency of their records:
 	- Heart Rate Variability Histogram;
 	- Stress Management Score.
 
-	These variables are read individually and joined together in a new dataframe, which contains the dates and correspondent values of all variables. The dataframe was saved in a new file, <i>single_daily_records.csv</i> and the correspondent code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/single_daily_data.py).
+	These variables are read individually and joined together in a new dataframe, which contains the dates and correspondent values of all variables. The dataframe is saved in a new file (<i>single_daily_records.csv</i>) and the correspondent code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/single_daily_data.py).
 
 2. Multiple daily records - data contains several values per day and includes the following parameters, which are continuously measured by Sense:
 	- Steps;
@@ -286,3 +286,4 @@ There are 3 different types of data, based on the frequency of their records:
 	- Snore and Noise Detection;
 	- Electrodermal Activity.
 
+	These variables are read individually and put into dataframes, with a new timestamp variable that is the original timestamps rounded to a 5-minute interval. The dataframes are saved in new files (<i>recorded_exercises.csv</i>, <i>ecg_signals.csv</i>, <i>noise_signals.csv</i>, <i>eda_signals.csv</i>) and the correspondent code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/single_daily_data.py).
