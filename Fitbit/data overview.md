@@ -254,7 +254,20 @@ The previous Fitbit parameters are organized in different folders and files and 
 
 There are 3 different types of data, based on the frequency of their records:
 
-1. Single daily records - it contains one value per day and includes the following parameters: Daily Readiness Score, Active Zone Minutes, VO2 Max, Resting Heart Rate, Sleep Stages, Sleep Score, Breathing Rate, Baseline Temperature, Daily Heart Rate Variability, Heart Rate Variability Histogram, and Stress Management Score. These variables are read individually and joined together in a new dataframe, which contains the dates and correspondent values of all variables. This dataframe was saved in a new file, <i>single_daily_records.csv</i>. The code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/single_daily_data.py)
+1. Single daily records - it contains one value per day and includes the following parameters: 
+	- Daily Readiness Score;
+	- Active Zone Minutes; 
+	- VO2 Max;
+	- Resting Heart Rate;
+	- Sleep Stages;
+	- Sleep Score;
+	- Breathing Rate;
+	- Baseline Temperature;
+	- Daily Heart Rate Variability;
+	- Heart Rate Variability Histogram;
+	- Stress Management Score.
+
+	These variables are read individually and joined together in a new dataframe, which contains the dates and correspondent values of all variables. This dataframe was saved in a new file, <i>single_daily_records.csv</i>. The code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/single_daily_data.py).
 
 2. Multiple daily records
 
