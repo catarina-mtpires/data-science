@@ -286,4 +286,4 @@ There are 3 different types of data, based on the frequency of their records:
 	- Snore and Noise Detection;
 	- Electrodermal Activity.
 
-	These variables are read individually and put into dataframes, with a new timestamp variable that is the original timestamps rounded to a 5-minute interval. The dataframes are saved in new files (<i>recorded_exercises.csv</i>, <i>ecg_signals.csv</i>, <i>noise_signals.csv</i>, <i>eda_signals.csv</i>) and the correspondent code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/single_daily_data.py).
+	These variables are read individually and put into dataframes, with a new timestamp variable that is the original timestamps rounded to a 5-minute interval. The dataframes are saved in new files (<i>recorded_exercises.csv</i>, <i>ecg_signals.csv</i>, <i>noise_signals.csv</i>, <i>eda_signals.csv</i>) and the correspondent code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/recorded_act_signals.py).
