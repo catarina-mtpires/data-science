@@ -7,7 +7,7 @@ import utils.file_to_df as f2df
 
 # daily readiness score
 df_drs = f2df.get_dataframe_csv(c.DIR_DRS, c.OG_DRS_COL, c.NEW_DRS_COL, 'date', '%Y-%m-%d')
-# VO2 max
+# vo2 max
 df_vo2_max = f2df.get_dataframe_daily_json(c.DIR_VO2_MAX, 'VO2 max', value='filteredDemographicVO2Max')
 # resting heart rate
 df_rhr = f2df.get_dataframe_daily_json(c.DIR_RHR, 'RHR')
@@ -23,7 +23,7 @@ df_hist_hrv = f2df.get_dataframe_csv(c.DIR_HRV_HIST, c.OG_HRV_HIST_COL, c.NEW_HR
 # stress management score
 df_stress_score = f2df.get_dataframe_csv(c.DIR_STRESS_SCORE, c.OG_STRESS_SCORE_COL, c.NEW_STRESS_SCORE_COL, 'date', '%Y-%m-%dT%H:%M:%S')
 
-# Active Zone Minutes
+# active zone minutes
 dates, sedentary_min = f2df.get_dataframe_json(c.DIR_AZM_SED, create_df=False)
 _, light_min = f2df.get_dataframe_json(c.DIR_AZM_LIGHT, create_df=False)
 _, moderate_min = f2df.get_dataframe_json(c.DIR_AZM_MOD, create_df=False)
@@ -57,20 +57,26 @@ df_sleep_data = pd.DataFrame({'date': date, 'start sleep': start_time, 'end slee
                               '30 day avg deep': deep_30_avg, 'min rem': rem_min, '30 day avg rem': rem_30_avg})
 df_sleep_data = df_sleep_data.sort_values(by='date')
 
+# List of columns' names of all variables
 total_data = [df_drs, df_azm, df_vo2_max, df_rhr, df_sleep_data, df_sleep_score, df_breathing, df_comp_temp, df_daily_hrv, df_hist_hrv, df_stress_score]
 cols = []
 for df in total_data:
     cols += list(df.columns[1:])
 
+# Create range of dates within the data (from December 22, 2021, to September 10, 2022)
 dates = pd.date_range(start="2021-12-22", end="2022-09-10")
-daily_data = pd.DataFrame(np.empty((len(dates), len(cols))) * np.nan, columns=cols)
-daily_data.insert(0, 'date', dates)
 
+# Create empty dataframe and insert column with dates 
+single_daily_data = pd.DataFrame(np.empty((len(dates), len(cols))) * np.nan, columns=cols)
+single_daily_data.insert(0, 'date', dates)
+
+# Merge variables into one single dataframe
 for date, i in zip(dates, range(len(dates))):
     for df in total_data:
         index = df[df['date'] == date].index.tolist()
         if index:
             for col in df.columns[1:]:
-                daily_data[col][i] = df[col][index[0]]
+                single_daily_data[col][i] = df[col][index[0]]
 
-daily_data.to_csv('data/daily_data.csv', index=False)
+# Write data into csv file
+single_daily_data.to_csv('data/single_daily_data.csv', index=False)

@@ -21,7 +21,10 @@ With these sensors, Sense can provide information about health and fitness of th
 4. Stress Data - includes stress management score, and electrodermal activity;
 5. Oxygen Variation Data - includes estimated oxygen variation.
 
-Next, we have a detailed description of each parameter.
+
+# Fitbit Data Description
+
+This section contains a detailed description of each parameter.
 
 ## 1. Activity Tracking Data
 
@@ -243,3 +246,16 @@ Estimated oxygen variation approximates the changes in the user's blood oxygen s
 Estimated oxygen variation data extracted from Fitbit are in the <i>.csv</i> format and contain:
 - Timestamps with up to 1 minute interval;
 - Infrared to red signal ratio. 
+
+
+# Reading and Writing Fitbit Data
+
+The previous Fitbit parameters are organized in different folders and files and each one needs to be read and processed separately. 
+
+There are 3 different types of data, based on the frequency of their records:
+
+1. Single daily records - it contains one value per day and includes the following parameters: Daily Readiness Score, Active Zone Minutes, VO2 Max, Resting Heart Rate, Sleep Stages, Sleep Score, Breathing Rate, Baseline Temperature, Daily Heart Rate Variability, Heart Rate Variability Histogram, and Stress Management Score. These variables are read individually and joined together in a new dataframe, which contains the dates and correspondent values of all variables. This dataframe was saved in a new file, <i>single_daily_records.csv</i>. The code can be found (here)[]
+
+2. Multiple daily records
+
+3. Recorded signals
