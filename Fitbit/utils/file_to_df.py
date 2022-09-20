@@ -52,3 +52,16 @@ def get_dataframe_csv(dir_files, old_col, new_col, time_var, time_format, daily=
     df.columns = new_col
 
     return df
+
+
+def round_timestamp(df, time_var, interval=1):
+    round_ts = []
+    for ts in df[time_var]:
+        discard = datetime.timedelta(minutes=ts.minute % interval, seconds=ts.second, microseconds=ts.microsecond)
+        ts -= discard
+        if discard >= datetime.timedelta(minutes=interval/2):
+            ts += datetime.timedelta(minutes=interval)
+        round_ts += [ts]
+    df.insert(0, 'rounded timestamp', round_ts)
+
+    return df

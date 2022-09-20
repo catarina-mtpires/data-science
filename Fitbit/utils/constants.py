@@ -1,4 +1,5 @@
 # DIRECTORIES
+# Single daily data
 DIR_DRS = 'data/1_physical_activity/6_daily_readiness/*.csv'
 DIR_AZM_SED = 'data/1_physical_activity/7_active_zone_minutes/sedentary/*.json'
 DIR_AZM_LIGHT = 'data/1_physical_activity/7_active_zone_minutes/light/*.json'
@@ -13,8 +14,15 @@ DIR_COMP_TEMP = 'data/3_sleep/5_temperature/computed/*.csv'
 DIR_DAILY_HRV = 'data/3_sleep/6_heart_rate_variability/daily/*.csv'
 DIR_HRV_HIST = 'data/3_sleep/6_heart_rate_variability/histogram/*.csv'
 DIR_STRESS_SCORE = 'data/4_stress/1_stress_score/*.csv'
+# Multiple daily data
+# Recorded activities and signals
+DIR_EXERCISE = 'data/1_physical_activity/5_exercise/*.json'
+DIR_ECG = 'data/2_heart/3_ecg/*.csv'
+DIR_NOISE = 'data/3_sleep/3_snore/*.csv'
+DIR_EDA = 'data/4_stress/2_eda_sessions/mindfulness_eda_data_sessions.csv'
 
 # ORIGINAL DATA COLUMNS
+# Single daily data
 OG_DRS_COL = ['date', 'readiness_score_value', 'srl_normalized_score', 'ff_normalized_score', 'hrv_normalized_score']
 OG_SLEEP_SCORE_COL = ['timestamp', 'overall_score', 'composition_score', 'revitalization_score', 'duration_score']
 OG_BREATHING_COL = ['timestamp', 'full_sleep_breathing_rate', 'deep_sleep_breathing_rate', 'light_sleep_breathing_rate', 'rem_sleep_breathing_rate']
@@ -22,8 +30,14 @@ OG_COMP_TEMP_COL = ['sleep_end', 'nightly_temperature', 'baseline_relative_sampl
 OG_DAILY_HRV_COL = ['timestamp', 'rmssd']
 OG_HRV_HIST_COL = ['timestamp', 'bucket_values']
 OG_STRESS_SCORE_COL = ['date', 'stress_score', 'sleep_points', 'responsiveness_points', 'exertion_points']
+# Multiple daily data
+# Recorded activities and signals
+OG_ECG_COL = ['reading_time', 'heart_rate', 'waveform_samples']
+OG_NOISE_COL = ['timestamp', 'mean_dba', 'max_dba', 'min_dba', 'events_number', 'snoring_events_number']
+OG_EDA_COL = ['timestamp', 'scl_values']
 
 # NEW DATA COLUMNS
+# Single daily data
 NEW_DRS_COL = ['date', 'readiness score', 'readiness sleep score', 'readiness fitness fatigue', 'readiness HRV']
 NEW_SLEEP_SCORE_COL = ['date', 'sleep score', 'sleep quality score', 'sleep restoration score', 'sleep duration score']
 NEW_BREATHING_COL = ['date', 'total breathing', 'deep sleep breathing', 'light sleep breathing', 'rem sleep breathing']
@@ -31,3 +45,6 @@ NEW_COMP_TEMP_COL = ['date', 'temperature', 'temperature std']
 NEW_DAILY_HRV_COL = ['date', 'HRV']
 NEW_HRV_HIST_COL = ['date', 'HRV histogram']
 NEW_STRESS_SCORE_COL = ['date', 'stress score', 'stress sleep points', 'stress responsiveness points', 'stress exertion points']
+# Multiple daily data
+# Recorded activities and signals
+
