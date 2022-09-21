@@ -47,10 +47,10 @@ df_eda = f2df.get_dataframe_csv(c.DIR_EDA, c.OG_EDA_COL, c.OG_EDA_COL, 'timestam
 df_eda['scl_values'] = [np.array(signal[1:-1].split(sep=', ')).astype(float) for signal in df_eda['scl_values']]
 
 # Round timestamp to the closest 5 min interval
-df_exercise = f2df.round_timestamp(df_exercise, 'start time')
-df_ecg = f2df.round_timestamp(df_ecg, 'reading_time')
-df_noise = f2df.round_timestamp(df_noise, 'timestamp')
-df_eda = f2df.round_timestamp(df_eda, 'timestamp')
+df_exercise = f2df.round_timestamp(df_exercise, time_var='start time')
+df_ecg = f2df.round_timestamp(df_ecg, time_var='reading_time')
+df_noise = f2df.round_timestamp(df_noise)
+df_eda = f2df.round_timestamp(df_eda)
 
 # Write data into csv
 df_exercise.to_csv('data/recorded_exercises.csv', index=False)

@@ -66,7 +66,7 @@ for df in total_data:
 # Create range of dates within the data (from December 22, 2021, to September 10, 2022)
 dates = pd.date_range(start="2021-12-22", end="2022-09-10")
 
-# Create empty dataframe and insert column with dates 
+# Create empty dataframe and insert column with dates
 single_daily_data = pd.DataFrame(np.empty((len(dates), len(cols))) * np.nan, columns=cols)
 single_daily_data.insert(0, 'date', dates)
 
