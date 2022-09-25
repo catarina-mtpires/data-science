@@ -58,7 +58,7 @@ NEW_DAILY_HRV_COL = ['date', 'HRV']
 NEW_HRV_HIST_COL = ['date', 'HRV histogram']
 NEW_STRESS_SCORE_COL = ['date', 'stress score', 'stress sleep points', 'stress responsiveness points', 'stress exertion points']
 # Multiple daily data
-NEW_WRIST_TEMP_COL = ['timestamp', 'value']
-NEW_HRV_COL = ['timestamp', 'HRV', 'low frequency', 'high frequency']
+NEW_WRIST_TEMP_COL = ['timestamp', 'wrist temperature']
+NEW_HRV_COL = ['timestamp', 'HRV', 'HRV - low frequency', 'HRV - high frequency']
 NEW_O2_VAR_COL = ['timestamp', 'IR to R signal ratio']
 

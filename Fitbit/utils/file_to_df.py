@@ -25,7 +25,7 @@ def get_dataframe_daily_json(dir_files, v_name, value='value', format='%m/%d/%y 
     return df
 
 
-def get_dataframe_json(dir_files, create_df=True):
+def get_dataframe_json(dir_files, create_df=True, var_name='value'):
     data = read_json_files(dir_files)
     timestamps, values = [], []
     for sample in data:
@@ -33,7 +33,7 @@ def get_dataframe_json(dir_files, create_df=True):
         values += [float(sample['value'])]
 
     if create_df:
-        return pd.DataFrame({'timestamp': timestamps, 'value': values})
+        return pd.DataFrame({'timestamp': timestamps, var_name: values}).drop_duplicates()
     else:
         return timestamps, values
 
