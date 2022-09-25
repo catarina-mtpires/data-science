@@ -73,3 +73,12 @@ def round_timestamp(df, time_var='timestamp', interval=1, unit='min'):
     df.insert(0, 'rounded timestamp', round_ts)
 
     return df
+
+
+def merge_data(total_data, df, ts_name):
+    df[ts_name] = df[ts_name].values.astype('<M8[m]')
+    for data in total_data:
+        data[ts_name] = data[ts_name].values.astype('<M8[m]')
+        df = pd.merge_asof(df, data, on=ts_name, by=ts_name)
+
+    return df

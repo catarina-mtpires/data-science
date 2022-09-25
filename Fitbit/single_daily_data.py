@@ -57,26 +57,17 @@ df_sleep_data = pd.DataFrame({'date': date, 'start sleep': start_time, 'end slee
                               '30 day avg deep': deep_30_avg, 'min rem': rem_min, '30 day avg rem': rem_30_avg})
 df_sleep_data = df_sleep_data.sort_values(by='date')
 
-# List of columns' names of all variables
+# Create a list with all data
 total_data = [df_drs, df_azm, df_vo2_max, df_rhr, df_sleep_data, df_sleep_score, df_breathing, df_comp_temp, df_daily_hrv, df_hist_hrv, df_stress_score]
-cols = []
-for df in total_data:
-    cols += list(df.columns[1:])
 
 # Create range of dates within the data (from December 22, 2021, to September 10, 2022)
 dates = pd.date_range(start="2021-12-22", end="2022-09-10")
-
-# Create empty dataframe and insert column with dates
-single_daily_data = pd.DataFrame(np.empty((len(dates), len(cols))) * np.nan, columns=cols)
-single_daily_data.insert(0, 'date', dates)
-
-# Merge variables into one single dataframe
-for date, i in zip(dates, range(len(dates))):
-    for df in total_data:
-        index = df[df['date'] == date].index.tolist()
-        if index:
-            for col in df.columns[1:]:
-                single_daily_data[col][i] = df[col][index[0]]
+single_daily_data = pd.DataFrame(dates, columns=['date'])
+single_daily_data = f2df.merge_data(total_data, single_daily_data, 'date')
 
 # Write data into csv file
 single_daily_data.to_csv('data/single_daily_data.csv', index=False)
+
+
+
+
