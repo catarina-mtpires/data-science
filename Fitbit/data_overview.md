@@ -280,6 +280,8 @@ There are 3 different types of data, based on the frequency of their records:
 	- Heart Rate Variability
 	- Estimated Oxygen Variation.
 
+	These variables are read individually and their timestamps are rounded to the nearest 1-minute interval. The variables are joined together in a new dataframe, which contains the new timestamps and correspondent values of all variables. The dataframe is saved in a new file (<i>multiple_daily_data.csv</i>) and the correspondent code can be found [here](https://github.com/catarina-mtpires/data-science/blob/main/Fitbit/multiple_daily_data.py). Regarding the Heart Rate data, which had more than one measurement per minute, the average Heart Rate value was calculated within each 1 minute interval. Additionally, the original Heart Rate data is also saved in a different file, <i>hr_data.csv</i>.
+	
 3. Recorded activities and signals - data contains activities and signals recorded by the user, which are not continuously measured by Sense: 
 	- Exercise;
 	- ECG signals;
