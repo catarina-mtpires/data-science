@@ -54,7 +54,7 @@ def get_dataframe_csv(dir_files, old_col, new_col, time_var, time_format, daily=
     return df
 
 
-def round_timestamp(df, time_var='timestamp', interval=1, unit='min'):
+def round_timestamp(df, time_var='timestamp', interval=1, unit='min', insert_col=True):
     round_ts = []
     if unit == 'min':
         for ts in df[time_var]:
@@ -70,7 +70,10 @@ def round_timestamp(df, time_var='timestamp', interval=1, unit='min'):
             if discard >= datetime.timedelta(seconds=interval/2):
                 ts += datetime.timedelta(seconds=interval)
             round_ts += [ts]
-    df.insert(0, 'rounded timestamp', round_ts)
+    if insert_col:
+        df.insert(0, 'rounded timestamp', round_ts)
+    else:
+        df[time_var] = round_ts
 
     return df
 
@@ -79,6 +82,7 @@ def merge_data(total_data, df, ts_name):
     df[ts_name] = df[ts_name].values.astype('<M8[m]')
     for data in total_data:
         data[ts_name] = data[ts_name].values.astype('<M8[m]')
+        data = data.sort_values(by=ts_name)
         df = pd.merge_asof(df, data, on=ts_name, by=ts_name)
 
     return df

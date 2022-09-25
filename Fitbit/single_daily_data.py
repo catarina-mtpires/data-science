@@ -62,6 +62,8 @@ total_data = [df_drs, df_azm, df_vo2_max, df_rhr, df_sleep_data, df_sleep_score,
 
 # Create range of dates within the data (from December 22, 2021, to September 10, 2022)
 dates = pd.date_range(start="2021-12-22", end="2022-09-10")
+
+# Merge data into a single dataframe
 single_daily_data = pd.DataFrame(dates, columns=['date'])
 single_daily_data = f2df.merge_data(total_data, single_daily_data, 'date')
 
